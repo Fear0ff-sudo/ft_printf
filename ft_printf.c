@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
+/*   By: amanet <amanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 11:05:30 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/17 10:04:04 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/17 11:38:14 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	ft_printf(const char *s, ...)
 			ft_putchar_fd(s[i], 1);
 			i++;
 		}
-		else if (ft_isprint(s[i]))
+		else
 			ft_putchar_fd(s[i], 1);
 		i++;
 	}
@@ -75,6 +75,8 @@ int	ft_printf(const char *s, ...)
 int	main(void)
 {
 	// printf("%d", ft_printf_args("%%d%s%%"));
-	ft_printf("Un nombre : %d\n Un char : %c", 42, 'c');
+	ft_printf("Un nombre : %d \nUn char : %c", 42, 'c');
+	printf("\n\n");
+	printf("Un nombre : %d \nUn char : %c", 42, 'c');
 	return (0);
 }
