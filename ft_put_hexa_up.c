@@ -3,41 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put_hexa_up.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amanet <amanet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 14:20:02 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/24 13:51:07 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/24 21:27:09 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-// static int ft_put_hexa_up_negative(int n)
-// {
-// 	int		i;
-// 	char	*res;
-// 	char	c;
-// 	int		temp;
+int	ft_put_bin_hexa_up(char *n)
+{
+	int		i;
+	int		temp;
+	char	c;
 
-// 	i = 1;
-// 	res = malloc(sizeof(char) * 8 + 1);
-// 	if (!res)
-// 		return (0);
-// 	temp = n;
-// 	while (i < 9)
-// 	{
-// 		if (n >= 2)
-// 			ft_put_hexa_up(n / 2);
-// 		c = (n % 2) + '0';
-// 	}
-
-// 	write(1, &c, 1);
-// 	// while (temp >= 16)
-// 	// {
-// 	// 	temp /= 16;
-// 	// 	i++;
-// 	// }
-// }
+	i = 16;
+	if (!n)
+		return (0);
+	while (i > 0)
+	{
+		temp = 0;
+		temp += 1 * n[i];
+		temp += 2 * n[i - 1];
+		temp += 4 * n[i - 2];
+		temp += 8 * n[i - 3];
+		if ((temp % 16) > 9)
+			c = ((temp % 16) - 9) + ('A' - 1);
+		else
+			c = (temp % 16) + '0';
+		write(1, &c, 1);
+		i -= 4;
+	}
+	return (8);
+}
+int	ft_put_hexa_up_negative(int n)
+{
+	return (ft_put_bin_hexa_up(ft_to_bin(n)));
+}
 
 int	ft_put_hexa_up(int n)
 {

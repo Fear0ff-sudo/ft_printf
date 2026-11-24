@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amanet <amanet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 11:05:30 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/24 13:35:56 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/24 21:30:02 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ int	main(void)
 
 	printf("Hexa UP :\n");
 	ft_printf("ft   : %X %X %X\n", 42, -42, 5800);
-	printf("real : %X %X %X\n", 42, -5800, 5800);
+	printf("real : %X %X %X\n", 42, -42, 5800);
 	printf("\n");
 
 	printf("Un void * :\n");

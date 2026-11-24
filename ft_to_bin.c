@@ -6,7 +6,7 @@
 /*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 13:51:35 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/24 15:35:54 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/24 21:28:25 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,17 @@ static char	*ft_to_bin_pos(int n)
 
 	i = 0;
 	temp = ft_get_size(n);
-	res = malloc(sizeof(char) * 12 + 1);
+	res = malloc(sizeof(char) * 16 + 1);
 	if (!res)
 		return (NULL);
-	ft_memset(res, '0', 12);
+	ft_memset(res, '0', 16);
 	while (i < temp)
 	{
-		res[(12 - 1) - i] = '0' + (n % 2);
+		res[(16 - 1) - i] = '0' + (n % 2);
 		n /= 2;
 		i++;
 	}
-	res[12] = '\0';
+	res[16] = '\0';
 	return (res);
 }
 
@@ -65,14 +65,14 @@ static char	*ft_to_bin_negative(int n)
 		i++;
 	}
 	i = 0;
-	while (i < 12)
+	while (i < 16)
 	{
-		if (res[11 - i] == '0')
+		if (res[(16 - 1) - i] == '0')
 		{
-			res[11 - i] = '1';
+			res[(16 - 1) - i] = '1';
 			return (res);
 		}
-		res[11 - i] = '0';
+		res[(16 - 1) - i] = '0';
 		i++;
 	}
 	return (res);
@@ -84,14 +84,13 @@ char	*ft_to_bin(int n)
 		return (ft_to_bin_negative(n));
 	return (ft_to_bin_pos(n));
 }
+// #include <stdio.h>
 
-#include <stdio.h>
-
-int	main(int argc, char **argv)
-{
-	if (argc > 1)
-	{
-		printf("%s\n", ft_to_bin(ft_atoi(argv[1])));
-	}
-	return (0);
-}
+// int	main(int argc, char **argv)
+// {
+// 	if (argc > 1)
+// 	{
+// 		printf("%s\n", ft_to_bin(ft_atoi(argv[1])));
+// 	}
+// 	return (0);
+// }
