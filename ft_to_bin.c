@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_to_bin.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amanet <amanet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 13:51:35 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/24 14:54:08 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/24 15:35:54 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,17 @@ static char	*ft_to_bin_negative(int n)
 			res[i] = '0';
 		i++;
 	}
-	// NEED TO ADD 1 to the binary form
+	i = 0;
+	while (i < 12)
+	{
+		if (res[11 - i] == '0')
+		{
+			res[11 - i] = '1';
+			return (res);
+		}
+		res[11 - i] = '0';
+		i++;
+	}
 	return (res);
 }
 
