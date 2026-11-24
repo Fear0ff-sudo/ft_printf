@@ -6,7 +6,7 @@
 /*   By: amanet <amanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 11:10:46 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/20 11:13:46 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/24 14:03:25 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@
 #include "libft/libft.h"
 
 int	ft_put_unsigned_int(unsigned int n);
+int	ft_put_hexa_up(int n);
 
 #endif

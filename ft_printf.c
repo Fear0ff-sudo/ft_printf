@@ -6,7 +6,7 @@
 /*   By: amanet <amanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 11:05:30 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/20 14:01:33 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/24 13:35:56 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ static void	ft_call_ft(const char *s, va_list args)
 		ft_putnbr_fd(va_arg(args, int), 1);
 	else if (s[0] == 'u')
 		ft_put_unsigned_int(va_arg(args, unsigned int));
+	else if (s[0] == 'X')
+		ft_put_hexa_up(va_arg(args, unsigned int));
 }
 
 int	ft_printf(const char *s, ...)
@@ -104,6 +106,11 @@ int	main(void)
 	printf("Un string :\n");
 	ft_printf("ft   : %s \n", "Hello World!");
 	printf("real : %s \n", "Hello World!");
+	printf("\n");
+
+	printf("Hexa UP :\n");
+	ft_printf("ft   : %X %X %X\n", 42, -42, 5800);
+	printf("real : %X %X %X\n", 42, -5800, 5800);
 	printf("\n");
 
 	printf("Un void * :\n");
