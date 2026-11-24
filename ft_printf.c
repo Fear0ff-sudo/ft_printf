@@ -6,12 +6,12 @@
 /*   By: amanet <amanet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 11:05:30 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/17 11:38:14 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/20 14:01:33 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
-#include "libft/libft.h"
+#include "ft_printf.h"
 
 // static int	ft_printf_args(const char *s)
 // {
@@ -41,6 +41,10 @@ static void	ft_call_ft(const char *s, va_list args)
 	// 	ft_PLACE_HOLDER(va_arg(args, void *), 1);
 	else if (s[0] == 'd')
 		ft_putnbr_fd(va_arg(args, int), 1);
+	else if (s[0] == 'i')
+		ft_putnbr_fd(va_arg(args, int), 1);
+	else if (s[0] == 'u')
+		ft_put_unsigned_int(va_arg(args, unsigned int));
 }
 
 int	ft_printf(const char *s, ...)
@@ -74,9 +78,37 @@ int	ft_printf(const char *s, ...)
 
 int	main(void)
 {
+	void	*test = "test";
+
 	// printf("%d", ft_printf_args("%%d%s%%"));
-	ft_printf("Un nombre : %d \nUn char : %c", 42, 'c');
-	printf("\n\n");
-	printf("Un nombre : %d \nUn char : %c", 42, 'c');
+	printf("Un nombre :\n");
+	ft_printf("ft   : %d \n", 42);
+	printf("real : %d \n", 42);
+	printf("\n");
+
+	printf("Un int :\n");
+	ft_printf("ft   : %i \n", 42);
+	printf("real : %i \n", 42);
+	printf("\n");
+
+	printf("Un unsigned int :\n");
+	ft_printf("ft   : %u \n", 42);
+	printf("real : %u \n", 42);
+	printf("\n");
+
+	printf("Un char :\n");
+	ft_printf("ft   : %c\n", 'c');
+	printf("real : %c\n", 'c');
+	printf("\n");
+
+	printf("Un string :\n");
+	ft_printf("ft   : %s \n", "Hello World!");
+	printf("real : %s \n", "Hello World!");
+	printf("\n");
+
+	printf("Un void * :\n");
+	// ft_printf("ft   : %s \n", "Hello World!");
+	printf("real : %p \n", &test);
+	printf("\n");
 	return (0);
 }
