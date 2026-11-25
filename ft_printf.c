@@ -6,7 +6,7 @@
 /*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 11:05:30 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/24 21:30:02 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/25 15:29:51 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ int	ft_printf(const char *s, ...)
 
 	i = 0;
 	va_start(args, s);
-	while(s[i])
+	while (s[i])
 	{
-		if(s[i] == '%' && s[i + 1] != '%')
+		if (s[i] == '%' && s[i + 1] != '%')
 		{
 			ft_call_ft(s + i + 1, args);
 			i++;

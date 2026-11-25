@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putvoid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amanet <amanet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 10:55:42 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/20 14:09:26 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/25 15:28:40 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_putvoid(void *adress)
-{
-
-
-}
+// int	ft_putvoid(void *adress)
+// {
+// }

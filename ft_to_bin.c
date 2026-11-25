@@ -6,7 +6,7 @@
 /*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 13:51:35 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/24 21:28:25 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/25 15:27:49 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,17 @@ static char	*ft_to_bin_pos(int n)
 
 	i = 0;
 	temp = ft_get_size(n);
-	res = malloc(sizeof(char) * 16 + 1);
+	res = malloc(sizeof(char) * 32 + 1);
 	if (!res)
 		return (NULL);
-	ft_memset(res, '0', 16);
+	ft_memset(res, '0', 32);
 	while (i < temp)
 	{
-		res[(16 - 1) - i] = '0' + (n % 2);
+		res[(32 - 1) - i] = '0' + (n % 2);
 		n /= 2;
 		i++;
 	}
-	res[16] = '\0';
+	res[32] = '\0';
 	return (res);
 }
 
@@ -65,14 +65,14 @@ static char	*ft_to_bin_negative(int n)
 		i++;
 	}
 	i = 0;
-	while (i < 16)
+	while (i < 32)
 	{
-		if (res[(16 - 1) - i] == '0')
+		if (res[(32 - 1) - i] == '0')
 		{
-			res[(16 - 1) - i] = '1';
+			res[(32 - 1) - i] = '1';
 			return (res);
 		}
-		res[(16 - 1) - i] = '0';
+		res[(32 - 1) - i] = '0';
 		i++;
 	}
 	return (res);
