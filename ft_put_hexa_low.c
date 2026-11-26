@@ -6,13 +6,13 @@
 /*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/26 16:06:45 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/26 16:07:52 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/26 17:53:26 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_put_bin_hexa_low(char *n)
+static int	ft_put_bin_hexa_low(char *n)
 {
 	int		i;
 	int		temp;
@@ -38,7 +38,7 @@ int	ft_put_bin_hexa_low(char *n)
 	return (8);
 }
 
-int	ft_put_hexa_low_negative(int n)
+static int	ft_put_hexa_low_negative(int n)
 {
 	return (ft_put_bin_hexa_low(ft_to_bin(n)));
 }
