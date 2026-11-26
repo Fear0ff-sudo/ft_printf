@@ -1,0 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/02 11:04:34 by amanet            #+#    #+#             */
+/*   Updated: 2026/11/04 18:31:02 by amanet           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int	ft_isalnum(int c)
+{
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	else if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
+}
+// #include <stdio.h>
+// #include <ctype.h>
+
+// int	main(int argv, char **argc)
+// {
+// 	if (argv > 1)
+// 	{
+// 		printf("%d\n", ft_isalnum(argc[1][0]));
+// 		printf("%d", isalnum(argc[1][0]));
+// 	}
+// 	return (0);
+// }
