@@ -6,7 +6,7 @@
 #    By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/11 22:29:08 by amanet            #+#    #+#              #
-#    Updated: 2026/11/26 18:38:13 by amanet           ###   ########.fr        #
+#    Updated: 2026/11/26 19:44:37 by amanet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,13 +26,14 @@ SRCS = ft_printf.c \
 	ft_putstr_cnt.c \
 	ft_put_unsigned_int.c \
 	ft_putvoid.c \
+	ft_bin_reverse.c \
 	ft_to_bin.c 
 
 OBJS = $(SRCS:.c=.o)
 
-all: $(LIBFT) $(NAME)
+all: $(NAME)
 
-$(LIBFT):
+$(LIBFT): libft/Makefile libft/libft.h
 	$(MAKE) -C libft
 
 $(NAME): $(LIBFT) $(OBJS)

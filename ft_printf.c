@@ -6,7 +6,7 @@
 /*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 11:05:30 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/26 19:02:45 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/26 19:39:04 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,8 +140,8 @@ int	ft_printf(const char *s, ...)
 // 	printf("\n");
 
 // 	printf("Percentage :\n");
-// 	ft_count = ft_printf("ft   : %x %% %%x\n", 42);
-// 	real_count = printf("real : %x %% %%x\n", 42);
+// 	ft_count = ft_printf("ft   : %x %% %%x \n", 42);
+// 	real_count = printf("real : %x %% %%x \n", 42);
 // 	printf("-- ft count   : %d --\n", ft_count);
 // 	printf("-- real count : %d --\n", real_count);
 // 	printf("\n");

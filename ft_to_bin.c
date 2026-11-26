@@ -6,7 +6,7 @@
 /*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 13:51:35 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/25 15:27:49 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/26 19:38:47 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,9 @@ static char	*ft_to_bin_negative(int n)
 
 	i = 0;
 	res = ft_to_bin_pos(n * -1);
-	while (res[i])
-	{
-		if (res[i] == '0')
-			res[i] = '1';
-		else
-			res[i] = '0';
-		i++;
-	}
+	if (!res)
+		return (NULL);
+	ft_bin_reverse(res);
 	i = 0;
 	while (i < 32)
 	{
