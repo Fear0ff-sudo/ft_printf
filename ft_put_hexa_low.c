@@ -6,7 +6,7 @@
 /*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/26 16:06:45 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/26 17:53:26 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/26 19:18:10 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,18 @@ static int	ft_put_bin_hexa_low(char *n)
 
 static int	ft_put_hexa_low_negative(int n)
 {
-	return (ft_put_bin_hexa_low(ft_to_bin(n)));
+	int		res;
+	char	*bin;
+
+	if (n == -2147483648)
+	{
+		write(1, "80000000", 8);
+		return (8);
+	}
+	bin = ft_to_bin(n);
+	res = ft_put_bin_hexa_low(bin);
+	free(bin);
+	return (res);
 }
 
 int	ft_put_hexa_low(int n)

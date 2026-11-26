@@ -6,7 +6,7 @@
 /*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/26 17:16:14 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/26 17:17:03 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/26 19:07:01 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ int	ft_putstr_cnt(char *s)
 {
 	int	i;
 
+	if (!s)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+		
 	i = 0;
 	while (s[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 11:10:46 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/26 17:52:55 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/26 19:19:55 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int		ft_put_hexa_low(int n);
 int		ft_putvoid(void *adress);
 
 char	*ft_to_bin(int n);
+
+int		ft_printf(const char *s, ...);
 
 #endif
