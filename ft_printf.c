@@ -6,7 +6,7 @@
 /*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 11:05:30 by amanet            #+#    #+#             */
-/*   Updated: 2026/11/25 15:29:51 by amanet           ###   ########.fr       */
+/*   Updated: 2026/11/26 16:15:37 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ static void	ft_call_ft(const char *s, va_list args)
 		ft_put_unsigned_int(va_arg(args, unsigned int));
 	else if (s[0] == 'X')
 		ft_put_hexa_up(va_arg(args, unsigned int));
+	else if (s[0] == 'x')
+		ft_put_hexa_low(va_arg(args, unsigned int));
 }
 
 int	ft_printf(const char *s, ...)
@@ -82,22 +84,6 @@ int	main(void)
 {
 	void	*test = "test";
 
-	// printf("%d", ft_printf_args("%%d%s%%"));
-	printf("Un nombre :\n");
-	ft_printf("ft   : %d \n", 42);
-	printf("real : %d \n", 42);
-	printf("\n");
-
-	printf("Un int :\n");
-	ft_printf("ft   : %i \n", 42);
-	printf("real : %i \n", 42);
-	printf("\n");
-
-	printf("Un unsigned int :\n");
-	ft_printf("ft   : %u \n", 42);
-	printf("real : %u \n", 42);
-	printf("\n");
-
 	printf("Un char :\n");
 	ft_printf("ft   : %c\n", 'c');
 	printf("real : %c\n", 'c');
@@ -108,14 +94,39 @@ int	main(void)
 	printf("real : %s \n", "Hello World!");
 	printf("\n");
 
+	printf("Un void * :\n");
+	// ft_printf("ft   : %s \n", "Hello World!");
+	printf("real : %p \n", &test);
+	printf("\n");
+
+	printf("Un decimal :\n");
+	ft_printf("ft   : %d \n", 42);
+	printf("real : %d \n", 42);
+	printf("\n");
+
+	printf("Un int :\n");
+	ft_printf("ft   : %i \n", 42);
+	printf("real : %i \n", 42);
+	printf("\n");
+
+	printf("Un unsigned decimal :\n");
+	ft_printf("ft   : %u \n", 42);
+	printf("real : %u \n", 42);
+	printf("\n");
+
+	printf("Hexa low :\n");
+	ft_printf("ft   : %x %x %x\n", 42, -42, 5800);
+	printf("real : %x %x %x\n", 42, -42, 5800);
+	printf("\n");
+
 	printf("Hexa UP :\n");
 	ft_printf("ft   : %X %X %X\n", 42, -42, 5800);
 	printf("real : %X %X %X\n", 42, -42, 5800);
 	printf("\n");
 
-	printf("Un void * :\n");
-	// ft_printf("ft   : %s \n", "Hello World!");
-	printf("real : %p \n", &test);
+	printf("Percentage :\n");
+	ft_printf("ft   : %x %% %%x\n", 42);
+	printf("real : %x %% %%x\n", 42);
 	printf("\n");
 	return (0);
 }
